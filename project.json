@@ -1,0 +1,11 @@
+{
+  "title": "FileSize",
+  "version": "0.0.1",
+  "dependencies": {
+    "System.Runtime": "4.0.20-*",
+    "System.Console": "4.0.0-*"
+  },
+  "frameworks": {
+    "dnxcore50": { }
+  }
+}
