@@ -1,6 +1,12 @@
 {
+  "id": "data-size",
   "title": "DataSize",
-  "version": "0.0.1", 
+  "version": "0.0.1",
+  "authors": [ "asakeron" ],
+  "owners": [ "asakeron" ],
+  "language": "en-us",
+  "licenseUrl": "http://opensource.org/licenses/MIT",
+  "description": "Data type for representing digital information size.",
   "dependencies": { },
   "frameworks": {
     "dnxcore50": {
