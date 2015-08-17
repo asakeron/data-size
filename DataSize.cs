@@ -1,39 +1,39 @@
-﻿namespace FileSize
+﻿namespace DataSize
 {
-    public sealed class FileSize
+    public sealed class DataSize
     {
         private readonly ulong _bits;
 
-        private FileSize(ulong bits_) { _bits = bits_; }
+        private DataSize(ulong bits_) { _bits = bits_; }
 
-        public static FileSize FromBits(ulong bits_)
+        public static DataSize FromBits(ulong bits_)
         {
-            return new FileSize(bits_);
+            return new DataSize(bits_);
         }
 
-        public static FileSize FromBytes(ulong bytes_)
+        public static DataSize FromBytes(ulong bytes_)
         {
-            return new FileSize(bytes_ * 8);
+            return new DataSize(bytes_ * 8);
         }
 
-        public static FileSize FromKiloBytes(ulong kilobytes_)
+        public static DataSize FromKiloBytes(ulong kilobytes_)
         {
-            return new FileSize(kilobytes_ * 1000 * 8);
+            return new DataSize(kilobytes_ * 1000 * 8);
         }
 
-        public static FileSize FromMegaBytes(ulong megabytes_)
+        public static DataSize FromMegaBytes(ulong megabytes_)
         {
-            return new FileSize(megabytes_ * 1000 * 1000 * 8);
+            return new DataSize(megabytes_ * 1000 * 1000 * 8);
         }
 
-        public static FileSize FromGigaBytes(ulong gygabytes_)
+        public static DataSize FromGigaBytes(ulong gygabytes_)
         {
-            return new FileSize(gygabytes_ * 1000 * 1000 * 1000 * 8);
+            return new DataSize(gygabytes_ * 1000 * 1000 * 1000 * 8);
         }
 
-        public static FileSize FromTeraBytes(ulong terabytes_)
+        public static DataSize FromTeraBytes(ulong terabytes_)
         {
-            return new FileSize(terabytes_ * 1000 * 1000 * 1000 * 1000 * 8);
+            return new DataSize(terabytes_ * 1000 * 1000 * 1000 * 1000 * 8);
         }
 
         public double Bits

@@ -1,12 +1,11 @@
 {
-  "title": "FileSize",
-  "version": "0.0.1",
+  "title": "DataSize",
+  "version": "0.0.1", 
   "dependencies": { },
   "frameworks": {
     "dnxcore50": {
       "dependencies": {
-        "System.Runtime": "4.0.20-*",
-        "System.Console": "4.0.0-*"
+        "System.Runtime": "4.0.20-*"
       }
     }
   },
