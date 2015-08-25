@@ -1,6 +1,6 @@
 ﻿namespace DataSize
 {
-    public sealed class DataSize
+    public sealed class DataSize : System.IComparable
     {
         private const ulong BYTE = 8ul;
 
@@ -204,5 +204,57 @@
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            var ds = obj as DataSize;
+            if (ds == null) { throw new ArgumentException(); }
+            return this == null || ds == null ? false : _bits == ds._bits;
+        }
+
+        public override int GetHashCode()
+        {
+            return _bits.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} bit", _bits);
+        }
+
+        public int CompareTo(object obj)
+        {
+            var ds = obj as DataSize;
+            return _bits.CompareTo(ds._bits);
+        }
+
+        public static bool operator ==(DataSize a, DataSize b)
+        {
+            return a.CompareTo(b) == 0;
+        }
+
+        public static bool operator !=(DataSize a, DataSize b)
+        {
+            return a.CompareTo(b) != 0;
+        }
+
+        public static bool operator >(DataSize a, DataSize b)
+        {
+            return a.CompareTo(b) > 0;
+        }
+
+        public static bool operator >=(DataSize a, DataSize b)
+        {
+            return a.CompareTo(b) >= 0;
+        }
+
+        public static bool operator <(DataSize a, DataSize b)
+        {
+            return a.CompareTo(b) < 0;
+        }
+
+        public static bool operator <=(DataSize a, DataSize b)
+        {
+            return a.CompareTo(b) <= 0;
+        }
     }
 }
