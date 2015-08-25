@@ -2,6 +2,22 @@
 {
     public sealed class DataSize
     {
+        private const ulong BYTE = 8ul;
+
+        private const ulong KILO = 1000ul;
+        private const ulong MEGA = KILO * 1000ul;
+        private const ulong GIGA = MEGA * 1000ul;
+        private const ulong TERA = GIGA * 1000ul;
+        private const ulong PETA = TERA * 1000ul;
+        private const ulong EXA = PETA * 1000ul;
+
+        private const ulong KIBI = 1024ul;
+        private const ulong MEBI = KIBI * 1024ul;
+        private const ulong GIBI = MEBI * 1024ul;
+        private const ulong TEBI = GIBI * 1024ul;
+        private const ulong PEBI = TEBI * 1024ul;
+        private const ulong EXBI = PEBI * 1024ul;
+
         private readonly ulong _bits;
 
         private DataSize(ulong bits_) { _bits = bits_; }
@@ -13,27 +29,67 @@
 
         public static DataSize FromBytes(ulong bytes_)
         {
-            return new DataSize(bytes_ * 8);
+            return new DataSize(bytes_ * BYTE);
         }
 
         public static DataSize FromKiloBytes(ulong kilobytes_)
         {
-            return new DataSize(kilobytes_ * 1000 * 8);
+            return new DataSize(kilobytes_ * KILO * BYTE);
         }
 
         public static DataSize FromMegaBytes(ulong megabytes_)
         {
-            return new DataSize(megabytes_ * 1000 * 1000 * 8);
+            return new DataSize(megabytes_ * MEGA * BYTE);
         }
 
         public static DataSize FromGigaBytes(ulong gygabytes_)
         {
-            return new DataSize(gygabytes_ * 1000 * 1000 * 1000 * 8);
+            return new DataSize(gygabytes_ * GIGA * BYTE);
         }
 
         public static DataSize FromTeraBytes(ulong terabytes_)
         {
-            return new DataSize(terabytes_ * 1000 * 1000 * 1000 * 1000 * 8);
+            return new DataSize(terabytes_ * TERA * BYTE);
+        }
+
+        public static DataSize FromPetaBytes(ulong petabytes_)
+        {
+            return new DataSize(petabytes_ * PETA * BYTE);
+        }
+
+        public static DataSize FromExaBytes(ulong exabytes_)
+        {
+            return new DataSize(exabytes_ * EXA * BYTE);
+        }
+
+        public static DataSize FromKibiBytes(ulong kibibytes_)
+        {
+            return new DataSize(kibibytes_ * KIBI * BYTE);
+        }
+
+        public static DataSize FromMebiBytes(ulong mebibytes_)
+        {
+            return new DataSize(mebibytes_ * MEBI * BYTE);
+        }
+
+        public static DataSize FromGibiBytes(ulong gibibytes_)
+        {
+            return new DataSize(gibibytes_ * GIBI * BYTE);
+        }
+
+        public static DataSize FromTebiBytes(ulong pebibytes_)
+        {
+            return new DataSize(pebibytes_ * TEBI * BYTE);
+        }
+
+        public static DataSize FromPebiBytes(ulong pebibytes_)
+        {
+            return new DataSize(pebibytes_ * PEBI * BYTE);
+        }
+
+        public static DataSize FromExbiBytes(ulong exbibytes_)
+        {
+            return new DataSize(exbibytes_ * EXBI * BYTE);
         }
 
         public double Bits
@@ -48,7 +104,7 @@
         {
             get
             {
-                return _bits / 8d;
+                return _bits / (double)BYTE;
             }
         }
 
@@ -56,7 +112,7 @@
         {
             get
             {
-                return _bits / (1000d * 8d);
+                return _bits / ((double)KILO * BYTE);
             }
         }
 
@@ -64,7 +120,7 @@
         {
             get
             {
-                return _bits / (1000d * 1000d * 8d);
+                return _bits / ((double)MEGA * BYTE);
             }
         }
 
@@ -72,7 +128,7 @@
         {
             get
             {
-                return _bits / (1000d * 1000d * 1000d * 8d);
+                return _bits / ((double)GIGA * BYTE);
             }
         }
         
@@ -80,8 +136,73 @@
         {
             get
             {
-                return _bits / (1000d * 1000d * 1000d * 1000d * 8d);
+                return _bits / ((double)TERA * BYTE);
             }
         }
+
+        public double PetaBytes
+        {
+            get
+            {
+                return _bits / ((double)PETA * BYTE);
+            }
+        }
+
+        public double ExaBytes
+        {
+            get
+            {
+                return _bits / ((double)EXA * BYTE);
+            }
+        }
+
+        public double KibiBytes
+        {
+            get
+            {
+                return _bits / ((double)KIBI * BYTE);
+            }
+        }
+
+        public double MebiBytes
+        {
+            get
+            {
+                return _bits / ((double)MEBI * BYTE);
+            }
+        }
+
+        public double GibiBytes
+        {
+            get
+            {
+                return _bits / ((double)GIBI * BYTE);
+            }
+        }
+
+        public double TebiBytes
+        {
+            get
+            {
+                return _bits / ((double)TEBI * BYTE);
+            }
+        }
+
+        public double PebiBytes
+        {
+            get
+            {
+                return _bits / ((double)PEBI * BYTE);
+            }
+        }
+
+        public double ExbiBytes
+        {
+            get
+            {
+                return _bits / ((double)EXBI * BYTE);
+            }
+        }
+
     }
 }
