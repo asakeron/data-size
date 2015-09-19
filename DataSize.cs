@@ -256,5 +256,21 @@
         {
             return a.CompareTo(b) <= 0;
         }
+
+        public static DataSize operator +(DataSize a, DataSize b)
+        {
+            return new DataSize(a._bits + b._bits);
+        }
+
+        public static DataSize operator -(DataSize a, DataSize b)
+        {
+            return new DataSize(a._bits - b._bits);
+        }
+
+        public static DataSize operator *(DataSize a, ulong b)
+        {
+            return new DataSize(a._bits * b);
+        }
+
     }
 }
