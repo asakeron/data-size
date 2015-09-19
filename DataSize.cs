@@ -22,76 +22,135 @@
 
         private DataSize(ulong bits_) { _bits = bits_; }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="bits_"/> bits.
+        /// </summary>
+        /// <param name="bits_">Number of bits.</param>
         public static DataSize FromBits(ulong bits_)
         {
             return new DataSize(bits_);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="bytes_"/> bytes.
+        /// </summary>
+        /// <param name="bytes_">Number of bytes.</param>
         public static DataSize FromBytes(ulong bytes_)
         {
             return new DataSize(bytes_ * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="kilobytes_"/> kilobytes.
+        /// </summary>
+        /// <param name="kilobytes_">Number of kilobytes.</param>
         public static DataSize FromKiloBytes(ulong kilobytes_)
         {
             return new DataSize(kilobytes_ * KILO * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="megabytes_"/> megabytes.
+        /// </summary>
+        /// <param name="megabytes_">Number of megabytes.</param>
         public static DataSize FromMegaBytes(ulong megabytes_)
         {
             return new DataSize(megabytes_ * MEGA * BYTE);
         }
-
-        public static DataSize FromGigaBytes(ulong gygabytes_)
+   
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="gigabytes_"/> gigabytes.
+        /// </summary>
+        /// <param name="gigabytes_">Number of gigabytes.</param>
+        public static DataSize FromGigaBytes(ulong gigabytes_)
         {
-            return new DataSize(gygabytes_ * GIGA * BYTE);
+            return new DataSize(gigabytes_ * GIGA * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="terabytes_"/> terabytes.
+        /// </summary>
+        /// <param name="terabytes_">Number of terabytes.</param>
         public static DataSize FromTeraBytes(ulong terabytes_)
         {
             return new DataSize(terabytes_ * TERA * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="petabytes_"/> petabytes.
+        /// </summary>
+        /// <param name="petabytes_">Number of petabytes.</param>
         public static DataSize FromPetaBytes(ulong petabytes_)
         {
             return new DataSize(petabytes_ * PETA * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="exabytes_"/> exabytes.
+        /// </summary>
+        /// <param name="exabytes_">Number of exabytes.</param>
         public static DataSize FromExaBytes(ulong exabytes_)
         {
             return new DataSize(exabytes_ * EXA * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="kibibytes_"/> kibibytes.
+        /// </summary>
+        /// <param name="kibibytes_">Number of kibibytes.</param>
         public static DataSize FromKibiBytes(ulong kibibytes_)
         {
             return new DataSize(kibibytes_ * KIBI * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="mebibytes_"/> mebibytes.
+        /// </summary>
+        /// <param name="mebibytes_">Number of mebibytes.</param>
         public static DataSize FromMebiBytes(ulong mebibytes_)
         {
             return new DataSize(mebibytes_ * MEBI * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="gibibytes_"/> gibibyes.
+        /// </summary>
+        /// <param name="gibibytes_">Number of gibibytes.</param>
         public static DataSize FromGibiBytes(ulong gibibytes_)
         {
             return new DataSize(gibibytes_ * GIBI * BYTE);
         }
 
-        public static DataSize FromTebiBytes(ulong pebibytes_)
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="tebibytes_"/> tebibyes.
+        /// </summary>
+        /// <param name="tebibytes_">Number of tebibytes.</param>
+        public static DataSize FromTebiBytes(ulong tebibytes_)
         {
-            return new DataSize(pebibytes_ * TEBI * BYTE);
+            return new DataSize(tebibytes_ * TEBI * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="pebibytes_"/> pebibyes.
+        /// </summary>
+        /// <param name="pebibytes_">Number of pebibytes.</param>
         public static DataSize FromPebiBytes(ulong pebibytes_)
         {
             return new DataSize(pebibytes_ * PEBI * BYTE);
         }
 
+        /// <summary>
+        /// Initializes a DataSize instance representing <paramref name="exbibytes_"/> exbibytes.
+        /// </summary>
+        /// <param name="exbibytes_">Number of exbibytes.</param>
         public static DataSize FromExbiBytes(ulong exbibytes_)
         {
             return new DataSize(exbibytes_ * EXBI * BYTE);
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of bits.
+        /// </summary>
         public double Bits
         {
             get
@@ -100,6 +159,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of bytes.
+        /// </summary>
         public double Bytes
         {
             get
@@ -108,6 +170,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of kilobytes.
+        /// </summary>
         public double KiloBytes
         {
             get
@@ -116,6 +181,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of megabytes.
+        /// </summary>
         public double MegaBytes
         {
             get
@@ -124,6 +192,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of gigabytes.
+        /// </summary>
         public double GigaBytes
         {
             get
@@ -131,7 +202,10 @@
                 return _bits / ((double)GIGA * BYTE);
             }
         }
-        
+
+        /// <summary>
+        /// Double representing DataSize in number of terabytes.
+        /// </summary>
         public double TeraBytes
         {
             get
@@ -140,6 +214,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of petabytes.
+        /// </summary>
         public double PetaBytes
         {
             get
@@ -148,6 +225,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of exabytes.
+        /// </summary>
         public double ExaBytes
         {
             get
@@ -156,6 +236,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of kibibytes.
+        /// </summary>  
         public double KibiBytes
         {
             get
@@ -163,7 +246,10 @@
                 return _bits / ((double)KIBI * BYTE);
             }
         }
-
+        
+        /// <summary>
+        /// Double representing DataSize in number of mebibytes.
+        /// </summary>
         public double MebiBytes
         {
             get
@@ -171,7 +257,10 @@
                 return _bits / ((double)MEBI * BYTE);
             }
         }
-
+       
+        /// <summary>
+        /// Double representing DataSize in number of gibibytes.
+        /// </summary>
         public double GibiBytes
         {
             get
@@ -179,7 +268,10 @@
                 return _bits / ((double)GIBI * BYTE);
             }
         }
-
+        
+        /// <summary>
+        /// Double representing DataSize in number of tebibytes.
+        /// </summary>
         public double TebiBytes
         {
             get
@@ -187,7 +279,10 @@
                 return _bits / ((double)TEBI * BYTE);
             }
         }
-
+        
+        /// <summary>
+        /// Double representing DataSize in number of pebibytes.
+        /// </summary>
         public double PebiBytes
         {
             get
@@ -196,6 +291,9 @@
             }
         }
 
+        /// <summary>
+        /// Double representing DataSize in number of exbibytes.
+        /// </summary>
         public double ExbiBytes
         {
             get
@@ -207,7 +305,7 @@
         public override bool Equals(object obj)
         {
             var ds = obj as DataSize;
-            if (ds == null) { throw new ArgumentException(); }
+            if (ds == null) { throw new System.ArgumentException(); }
             return this == null || ds == null ? false : _bits == ds._bits;
         }
 
@@ -271,6 +369,5 @@
         {
             return new DataSize(a._bits * b);
         }
-
     }
 }
